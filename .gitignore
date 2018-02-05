@@ -1,7 +1,6 @@
 
 # YesWiki stuff
 
-wakka.config.php
 info.php
 tools/hashcash/secret/wp-hashcash.key
 cache/*
