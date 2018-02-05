@@ -2,6 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a032a5b8-3958-422a-b6ea-5eabebf05c78" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/actu.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/agenda.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/agenda_old.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/annuaire_alphabetique.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/annuaire_alphabetique_old.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/calendar.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/fiche-2.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/fiche-3.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/fiche-4.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/fiche-5.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/fiche-6.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/functions.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/liste_actu.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/liste_actu_slider.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/liste_agenda.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/liste_agenda_asso.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/liste_agenda_passe.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/liste_bourse_echange.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/liste_bourse_slider.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/liste_bourse_slider_demande.tpl.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/themes/tools/bazar/templates/liste_bourse_slider_propos.tpl.html" />
       <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -37,8 +58,6 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -208,12 +227,12 @@
       <workItem from="1515753241888" duration="1479000" />
       <workItem from="1515762621005" duration="1116000" />
       <workItem from="1517825182518" duration="3368000" />
-      <workItem from="1517842312482" duration="526000" />
+      <workItem from="1517842312482" duration="1258000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6633000" />
+
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -773,13 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/robots.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/interwiki.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-518">
@@ -900,6 +912,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/robots.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wakka.config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -910,8 +930,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+
           <folding />
         </state>
       </provider>

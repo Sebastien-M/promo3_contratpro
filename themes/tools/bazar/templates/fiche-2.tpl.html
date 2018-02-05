@@ -1,0 +1,152 @@
+<link rel="stylesheet" href="tools/bazar/presentation/styles/fiches/event.css">
+
+<?php
+$fiche_auteur = baz_valeurs_fiche($fiche['createur']);	
+if (empty($fiche_auteur['bf_titre']))
+	$fiche_auteur['bf_titre'] = $fiche['createur'];
+	
+$date_publication = date("d-m-Y", strtotime(substr($fiche['date_creation_fiche'], 0, 10)));
+
+$joursem = array("Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi");
+$moisjour = array(1=>"Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
+
+//recuperation des dates de début de lévenement
+list($annee, $mois, $jour) = explode('-', substr($fiche['bf_date_debut_evenement'], 0, 10));
+
+$date_debut = $fiche['bf_date_debut_evenement'];
+
+$horaire = false; //Test de présence d'un horaire
+if(strstr($date_debut, "T")) 
+{
+	$horaire = true;
+	$horaire_h = substr($date_debut, 11, 2);
+	$horaire_min = substr($date_debut, 14, 2);
+}
+
+//Calcul du timestamp
+if ($horaire == true)
+	$timestamp = mktime ($horaire_h, $horaire_min, 0, $mois, $jour, $annee);
+else
+	$timestamp = mktime (0, 0, 0, $mois, $jour, $annee);
+
+
+//recuperation des dates de fin de lévenement
+list($annee_fin, $mois_fin, $jour_fin) = explode('-', substr($fiche['bf_date_fin_evenement'], 0, 10));
+
+$date_fin = $fiche['bf_date_fin_evenement'];
+
+$horaire_fin = false;
+if(strstr($date_fin, "T")) 
+{
+	$horaire_fin = true;
+	$horaire_h_fin = substr($date_fin, 11, 2);
+	$horaire_min_fin = substr($date_fin, 14, 2);
+}
+
+//Calcul du timestamp de fin
+if ($horaire_fin == true)
+	$timestamp_fin = mktime ($horaire_h_fin, $horaire_min_fin, 0, $mois_fin, $jour_fin, $annee_fin);
+else
+	$timestamp_fin = mktime (0, 0, 0, $mois_fin, $jour_fin, intval($annee_fin));
+
+########################################################################
+
+$jour_debut_txt = $joursem[date("w",$timestamp)];
+$date_debut_txt = date("d", strtotime($fiche['bf_date_debut_evenement']));
+$mois_debut_txt = $moisjour[date("n",$timestamp)];
+
+$debut_txt_full = $jour_debut_txt.$date_debut_txt.$mois_debut_txt;
+	
+$jour_fin_txt = $joursem[date("w",$timestamp_fin)];
+$date_fin_txt = date("d", strtotime($fiche['bf_date_fin_evenement']));
+$mois_fin_txt = $moisjour[date("n",$timestamp_fin)];
+
+$fin_txt_full = $jour_fin_txt.$date_fin_txt.$mois_fin_txt;
+	
+?>
+
+<div class="FicheEvent">
+<?php echo $GLOBALS['wiki']->Format('{{grid}}'); ?>
+<?php echo $GLOBALS['wiki']->Format('{{col size="8"}}'); ?>
+		<h1>
+			<?php echo '<a href="wakka.php?wiki='.$fiche['id_fiche'].'">'.$fiche['bf_titre'].'</a>'; ?>
+		</h1>
+		<h4>
+			<?php
+			
+			echo 'Le '.$jour_debut_txt.' '.$date_debut_txt.' '.$mois_debut_txt.' '.$annee;
+			
+			if ($horaire == true)
+			{									  
+				if ($horaire_fin)
+					echo ' de ';
+				else
+					echo ' à ';
+				
+				echo $horaire_h;
+				echo "H";
+				if ($horaire_min != "00")                    			
+					echo $horaire_min;
+			}   
+			else
+				echo ' toute la journée';
+			
+			if ($fiche['bf_date_fin_evenement'] != '')
+			{
+				if ($debut_txt_full != $fin_txt_full)
+				{
+					echo ' au '.$jour_fin_txt.' '.$date_fin_txt.' '.$mois_fin_txt;
+				}
+				
+				if ($horaire_fin == true)
+				{
+					echo ' à '.$horaire_h_fin;
+					echo "H";
+					if ($horaire_min_fin != "00")                    			
+						echo $horaire_min_fin;
+				}
+			}
+			
+			?>
+			
+			<?php
+			$nom_createur = $fiche_auteur['bf_titre'];
+			if ($fiche['createur'] == 'VillE')
+				$nom_createur = 'Ville de Villeurbanne';
+			?>
+		par 
+			<a href="<?php echo $GLOBALS['wiki']->href('', $fiche['createur']); ?>">
+				<?php echo $nom_createur;?>
+			</a>
+		<br />
+		<i class="glyphicon glyphicon-map-marker map-marker" ></i>  
+			<?php $fichelieu = baz_valeurs_fiche($fiche['listefiche6']);
+			echo '<span class="lieu_event">';
+			echo '<a href="';
+			echo $GLOBALS['wiki']->href('',$fichelieu['id_fiche']);
+			echo '">';
+			echo $fichelieu['bf_titre'];
+			echo '</a>';
+			echo '</span>';
+			?>
+		</h4>
+		<p>
+			<?php echo $fiche['bf_description']; ?>
+		</p>
+						<?php
+		if (isset($fiche['imagebf_image']) && $fiche['imagebf_image']!='')
+		{
+			echo '<div style="width: 100%; margin: auto; margin-bottom: 1em; text-align: center;" ><img alt="'.$fiche['bf_titre'].'" src="files/'.$fiche['imagebf_image'].'"  style="max-width: 100%;"></div>';
+		}
+		?>
+		<?php echo $GLOBALS['wiki']->Format('{{end elem="col"}}'); ?>			
+		<?php echo $GLOBALS['wiki']->Format('{{col size="4"}}'); ?>
+
+		<?php
+		 // echo $GLOBALS['wiki']->Format('{{bazarcarto id="6" query="id_fiche='.$fichelieu['id_fiche'].'"  lat="45.7772" lon="4.8850" zoom="14"  provider="CartoDB" template="map.tpl.html" color="blue"}}'); 
+		?>
+
+		<?php echo $GLOBALS['wiki']->Format('{{end elem="col"}}'); ?>
+		<?php echo $GLOBALS['wiki']->Format('{{end elem="grid"}}'); ?>	
+
+</div>

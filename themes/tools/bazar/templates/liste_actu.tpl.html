@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="tools/bazar/presentation/styles/liste_actu.css">
+<?php 
+if(count($fiches)>0) : ?>
+    <?php echo $info_res;?>
+    <?php echo $pager_links;?>
+    <?php 
+    foreach($fiches as $fiche): ?>
+<div class="bazar-entry BlocActu" <?php echo $fiche['html_data'];?>>
+	<?php 
+
+		$nom_createur = $fiche['createur'];
+		if ($fiche['createur'] == 'VillE')
+			$nom_createur = 'Ville de Villeurbanne';
+		else
+		{
+			if ($fiche_createur = $GLOBALS['wiki']->LoadSingle("SELECT LIBELLE_TIERS FROM annuaire_assos WHERE tag = '".$fiche['createur']."';"))
+				$nom_createur = $fiche_createur['LIBELLE_TIERS'];
+		}
+			
+		
+	?>
+	<h3>
+		<a href="<?php echo $GLOBALS['wiki']->href('', $fiche['id_fiche']); ?>">
+			<?php echo $fiche['bf_titre'];?>
+		</a>
+	</h3>
+	<h4>
+		<?php
+			echo '<a href="';
+			echo $GLOBALS['wiki']->href('', $fiche['createur']);
+			echo '">';
+
+			echo $nom_createur;
+			echo '</a>';
+		?>
+	</h4>
+	<p class="DescriptionActu">
+		<?php
+			$content = strip_tags($fiche['bf_description']);
+
+			if (strlen($content) >= 145)
+				$content = mb_strimwidth($content, 0, 140, "...");
+			echo $content;
+		?> 
+	</p>
+</div>
+    <?php 
+    endforeach; ?>
+    <?php echo $pager_links;?>
+    <?php 
+endif;

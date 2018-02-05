@@ -1,0 +1,58 @@
+<?php 
+if(count($fiches)>0) : ?>
+    <?php echo $info_res;?>
+    <?php 
+	
+	$tmp = array_keys($fiches);	
+	$lastKey = array_pop($tmp);
+    foreach($fiches as  $key => $fiche): ?>
+	<?php 	
+		//Affichage des actus / projets TV et productions TV
+		if (($fiche['id_typeannonce'] == '3') OR ($fiche['id_typeannonce'] == '10') OR ($fiche['id_typeannonce'] == '6'))
+		{
+
+			echo '<div style="margin-top: 2em;" class="bazar-entry" '.$fiche['html_data'].'>';
+			echo '<div class="BlocActu">';
+				echo '<div class="TitreActu">';
+					echo '<a class="TitreActu" href="';
+					echo $GLOBALS['wiki']->href('', $fiche['id_fiche']);
+					echo '">';
+					echo $fiche['bf_titre'];
+					echo '</a>';				
+					echo '</div>';
+					
+					echo '<div class="AuteurActu">';
+					echo '<a class="AuteurActu" href="';
+					echo $GLOBALS['wiki']->href('', $fiche['createur']);
+					echo '">Ecrit par ';
+					echo $fiche['createur'];
+					echo '</a>';
+				echo '</div>';
+				echo '<div class="DescriptionActu">';
+					$description = strip_tags($GLOBALS['wiki']->Format($fiche['bf_description']));
+						  echo (substr($description, 0, 225));
+								
+					echo ' <strong><a class="LireSuiteActu" href="';
+					echo $GLOBALS['wiki']->href('', $fiche['id_fiche']);
+					echo '">';
+					echo '...';
+					echo '</a></strong>';
+				echo '</div>';
+
+			echo '</div>';
+			
+			if($key != $lastKey)
+				echo '<hr />';
+			//var_dump($fiche['html_data']); 
+			//echo $fiche['html'];
+			echo '</div>';
+		}
+		?>
+    <?php endforeach; ?>
+    <?php echo $pager_links;?>
+    <?php 
+endif;
+
+  ?>
+  
+  

@@ -1,0 +1,131 @@
+<?php 
+if(count($fiches)>0) : ?>
+<link rel="stylesheet" href="tools/bazar/presentation/styles/liste_agenda_complet.css">
+
+    <?php echo $info_res;?>
+	<div class="Bloc_Liste_Agenda">
+	<table>
+	<?php $max_col = 1; $max_lign = 1000; $nb_col = 0; $nb_lign = 0; ?>
+		
+    <?php $compteur_affiche = 0; foreach($fiches as $fiche): ?> 
+	<?php 
+		//Pour afficher proprement la date de l'evenement
+		$joursem = array("Dim.", "Lun.", "Mar.", "Mer.", "Jeu.", "Ven.", "Sam.");
+		$moisjour = array(1=>"Jan.", "Fév.", "Mars", "Avril", "Mai", "Juin", "Juil.", "Août", "Sept.", "Oct.", "Nov.", "Déc.");
+		list($annee, $mois, $jour) = explode('-', $fiche['bf_date_debut_evenement']);
+
+		$date_debut = $fiche['bf_date_debut_evenement'];
+
+		//On verifie si l'évenement à un horaire de début
+		
+		
+		$horaire = false;
+		if(strstr($date_debut, "T")) 
+		{
+			$horaire = true;
+			$horaire_h = substr($date_debut, 11, 2);
+			$horaire_min = substr($date_debut, 14, 2);
+		}
+		
+				$isLocated = false;
+		
+		//On regarde le lieu de l'événement
+		if ($fichelieu = baz_valeurs_fiche($fiche['listefiche6']))
+		{
+			$isLocated = true;
+			$lien_fiche = $fichelieu['id_fiche'];		
+			if (!empty($fichelieu["bf_sigle"] ))
+				$titre_fiche = $fichelieu["bf_sigle"];
+			else
+				$titre_fiche = mb_strimwidth($fichelieu['bf_titre'], 0, 30, "...");
+				 
+		}
+		else //Si il n'en a pas on prend le lieu du createur
+		{
+			$isLocated = true;	
+			if ($fiche_createur = baz_valeurs_fiche($fiche['createur']))
+			{
+				$titre_fiche = mb_strimwidth($fiche_createur['bf_titre'], 0, 30, "...");
+				
+				$lien_fiche = $fiche['createur'];
+			}
+			else
+				$isLocated = false;
+		}
+
+		// calcul du timestamp de l'evenement
+		if ($horaire == true)
+			$timestamp = mktime ($horaire_h, $horaire_min, 0, $mois, $jour, $annee);
+		else
+			$timestamp = mktime (0, 0, 0, $mois, $jour, $annee);
+			
+			if ($timestamp > time())
+			{
+				if ($compteur_affiche <= 2)
+				{
+					$compteur_affiche++;
+					echo '<div class="bazar-entry"'.$fiche['html_data'].'>';
+						
+						echo '<div class="EventAgenda">'; //Bloc principal
+						
+							echo '<div class="GaucheEventAgenda">'; //Bloc gauche : date
+							
+								echo '<div class="JourEventAgenda">'; //Jour
+									 echo $joursem[date("w",$timestamp)];
+								echo '</div>';
+								
+								echo '<div class="DateEventAgenda">'; //Date
+									echo date("d", strtotime($fiche['bf_date_debut_evenement']));
+								echo '</div>';
+								
+								echo '<div class="MoisEventAgenda">'; //Mois
+									echo $moisjour[date("n",$timestamp)];
+								echo '</div>';
+								
+							echo '</div>';	
+							
+							echo '<div class="DroiteEventAgenda">'; //Bloc droite titres horaire et lieu
+								echo '<div class="TitreEventAgenda">'; //Titre
+									echo '<a class="TitreAgenda" href="';
+									echo $GLOBALS['wiki']->href('', $fiche['id_fiche']);
+									echo '">';
+									echo mb_strimwidth($fiche['bf_titre'], 0, 70, "...");
+									
+									echo '</a>';	
+								echo '</div>';
+								
+								echo '<div class="HoraireLieuEventAgenda">'; //Horaire et lieu
+											
+										echo '<i class="glyphicon glyphicon-time icon-time"> </i> ';
+										if ($horaire == true)
+										{									  
+											echo ' '.$horaire_h;
+											echo " H ";
+											if ($horaire_min != "00")                    			
+												echo $horaire_min;
+										}   
+										else
+											echo 'Journée';               												
+										echo '<br /><i class="glyphicon glyphicon-map-marker map-marker"></i> ';
+										$fichelieu = baz_valeurs_fiche($fiche['listefiche1']);
+										echo '<a class="LieuAgenda" style="color: #555;" href="';
+										echo $GLOBALS['wiki']->href('',$lien_fiche);
+										echo '">';
+										echo $titre_fiche;
+										echo '</a>';	
+																
+								echo '</div>';
+							echo '</div>';
+						echo '</div>';		
+					echo '</div>';
+				}
+			}
+    endforeach; ?>
+	</table>
+	</div>
+    <?php echo $pager_links;?>
+    <?php 
+endif;
+  ?>
+  
+  
