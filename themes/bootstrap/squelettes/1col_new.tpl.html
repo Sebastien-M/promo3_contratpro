@@ -1,0 +1,84 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="{{configuration param="lang"}}"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="{{configuration param="lang"}}"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="{{configuration param="lang"}}"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="{{configuration param="lang"}}"> <!--<![endif]-->
+<head>
+  <!-- HTML Metas -->
+  <meta charset="{{configuration param="charset"}}">
+  {{metarobots}}
+  <meta name="keywords" content="{{configuration param="meta_keywords"}}" />
+  <meta name="description" content="{{configuration param="meta_description"}}" />
+  <meta name="viewport" content="width=device-width" />
+
+  <!-- Title of the page -->
+  <title>{{configuration param="wakka_name"}} - {{currentpage}}</title>
+  
+  <!-- Favicons -->
+  <link rel="shortcut icon" type="image/x-icon" href="{{configuration param="theme_path"}}images/favicon.ico" />
+  <link rel="apple-touch-icon" href="{{configuration param="theme_path"}}images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="{{configuration param="theme_path"}}images/favicon.png" />
+  
+  {{linkstyle othercss="bootstrap/bootstrap-responsive.min.css"}}
+  {{linkrss}}
+</head>
+
+<body {{parambody}}>
+    <div class="navbar navbar-default navbar-fixed-top test_show_menu">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+                    <nav class="nav-collapse collapse brand">
+            {{include page="PageMenuHaut" class="topnavpage" doubleclic="1" actif="1"}}
+          </nav><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+<span class="test_hide_menu"><ul class="test_hide_menu"><li> <span class="titre"><a href="http://wikilleurbanne.fr/wakka.php?wiki=PagePortail">wikilleurbanne.fr</a></span>  </li>
+<li> <a href="http://wikilleurbanne.fr/wakka.php?wiki=AnnuAire">Annuaire des associations</a>  </li>
+<li> <a href="http://wikilleurbanne.fr/wakka.php?wiki=AgendA">Agenda</a></li>
+<li> <a href="http://wikilleurbanne.fr/wakka.php?wiki=ActuAlites">Actualités</a></li>
+<li class="dropdown"> <a href="http://wikilleurbanne.fr/wakka.php?wiki=EchanGes" class=" dropdown-toggle" data-toggle="dropdown">Bourse d'échanges<b class="caret"></b></a>
+<ul class="dropdown-menu"><li> <a href="http://wikilleurbanne.fr/wakka.php?wiki=EchanGes">Bourse d'échanges</a></li>
+<li> <a href="http://wikilleurbanne.fr/wakka.php?wiki=LieuxRessources">Lieux Ressources</a> </li>
+</ul></li>
+<li class="dropdown"> <a href="http://wikilleurbanne.fr/wakka.php?wiki=FaQ" class=" dropdown-toggle" data-toggle="dropdown">FAQ<b class="caret"></b></a>
+<ul class="dropdown-menu"><li> <a href="http://wikilleurbanne.fr/wakka.php?wiki=FaQ">FAQ</a></li>
+<li> <a href="http://wikilleurbanne.fr/wakka.php?wiki=MentionsLegales">Mentions Légales</a></li>
+<li> <a href="http://wikilleurbanne.fr/wakka.php?wiki=ContacT">Contact</a></li>
+</ul></li>
+<li> <a href="wakka.php?wiki=ParametresUtilisateur">Compte</a></li>
+</ul></span>
+
+ <!-- <div class="fullwidth-header">
+   {{include page="PageHeader" doubleclic="1"}}
+  </div><!--/.fullwidth-header-->
+  <div class="container">
+    <div class="main-body" {{doubleclic}} role="main">
+      {WIKINI_PAGE}
+    </div><!--/.main-body-->
+  </div><!--/.container -->
+  {{barreredaction}}
+  <footer class="yeswiki-footer">
+    <div class="container">
+      {{include page="PageFooter" doubleclic="1"}}
+    </div>
+  </footer><!-- end of footer -->
+  {{linkjavascript}}
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87513580-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

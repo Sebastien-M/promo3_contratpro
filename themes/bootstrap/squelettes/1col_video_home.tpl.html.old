@@ -1,0 +1,63 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="{{configuration param="lang"}}"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="{{configuration param="lang"}}"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="{{configuration param="lang"}}"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="{{configuration param="lang"}}"> <!--<![endif]-->
+<head>
+  <!-- HTML Metas -->
+  <meta charset="{{configuration param="charset"}}">
+  {{metarobots}}
+  <meta name="keywords" content="{{configuration param="meta_keywords"}}" />
+  <meta name="description" content="{{configuration param="meta_description"}}" />
+  <meta name="viewport" content="width=device-width" />
+
+  <!-- Title of the page -->
+  <title>{{configuration param="wakka_name"}} - {{currentpage}}</title>
+  
+  <!-- Favicons -->
+  <link rel="shortcut icon" type="image/x-icon" href="{{configuration param="theme_path"}}images/favicon.ico" />
+  <link rel="apple-touch-icon" href="{{configuration param="theme_path"}}images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="{{configuration param="theme_path"}}images/favicon.png" />
+  
+  {{linkstyle othercss="bootstrap/bootstrap-responsive.min.css"}}
+  {{linkrss}}
+  <link rel="stylesheet" href="themes/bootstrap/styles/accueil.css">
+</head>
+
+<body {{parambody}}> <!-- poster="files/Design/703A9190.jpg" -->
+<video id="video_home" preload="true" autoplay loop>
+  <source src="files/Design/wikiback24fps.mp4" type="video/mp4" > 
+Your browser does not support the video tag.
+</video> 
+
+ <!-- <iframe id="video_home" width="1920" height="1080" src="https://www.youtube.com/embed/a7IePrNbZbI?rel=0&amp;controls=0&amp;showinfo=0&autoplay=1 " frameborder="0" allowfullscreen></iframe>-->
+  <div class="container page_wiki">
+    <div class="main-body" {{doubleclic}} role="main" style="margin: auto; width: 100%; height: 100%;">
+	{{logowiki}}
+	{{include page="MoteurRecherche" doubleclic="1"}}
+      {WIKINI_PAGE}
+    </div><!--/.main-body-->
+  </div><!--/.container -->
+ 
+  {{linkjavascript}}
+</body>
+<script language="javascript">
+	
+var video = document.getElementById("video_home");
+//video.style.visibility = 'hidden';
+video.play();
+//video.pause();
+
+
+
+
+setTimeout(function()
+{
+	video.style.visibility = 'visible';
+	//video.play();
+}, 4000);
+
+	
+
+</script>
+</html>

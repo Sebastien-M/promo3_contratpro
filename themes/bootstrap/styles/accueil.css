@@ -1,0 +1,125 @@
+#video_home
+{
+	position: fixed; right: 0; bottom: 0;
+	min-width: 100%; min-height: 100%;
+	width: auto; height: auto; z-index: -100;
+	background-size: cover;
+	background-image: url(../../../files/Design/wikiback.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+body
+{
+	background: url(../../../files/Design/wikiback.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	
+}
+
+h2
+{
+	color: white !important;
+}
+
+h2 a
+{
+	color: white;
+}
+
+@media(min-width:1200px)
+{
+	#BlocPagePortail > div.include > div.row-fluid, div.row
+	{
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-device-width: 800px) 
+{
+	html { background: url(files/Design/wikiback.jpg) #000 no-repeat center center fixed; }
+	#video_home { display: none; }
+	div.encart {margin: 0.5em;}
+}
+
+div.page_wiki
+{
+	height: 100%;
+}
+
+.bottom {
+    width: 100%;
+	margin: auto;
+    z-index: 1;
+    transition: all 1s;
+}
+
+.up {
+    width: 100%;
+	margin: auto;
+    z-index: 1;
+    transition: all 1s;
+}
+.hide {
+    opacity:0;
+    left:-100%;
+}
+.show {
+    opacity:1;
+    left:0;
+}
+
+div.page
+{
+	display: none;
+}
+
+#BlocPagePortail
+{
+	margin-top: 2em;
+}
+
+div.encart_faq
+{
+	color: white;
+	background-color: #ffb400;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: auto;
+}
+
+div.encart_contact
+{
+	color: white;
+	background-color: #00b9ae;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	margin-bottom: 1em;
+}
+
+.encart_titre
+{
+	text-align: center;
+margin-top: 5px;
+margin-bottom: 0px;
+text-shadow: 2px 2px #ff6d66;
+color: white;
+line-height: 1em;
+}
+h2
+{
+	margin-top: 1em;
+}
+a.lien_encart:hover
+{
+	text-decoration: none;
+}
+
+div.encart > h4
+{
+	text-shadow: 2px 2px white;
+}

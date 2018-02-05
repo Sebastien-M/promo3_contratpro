@@ -1,0 +1,27 @@
+
+# YesWiki stuff
+
+wakka.config.php
+info.php
+tools/hashcash/secret/wp-hashcash.key
+cache/*
+files/*
+themes/*
+!themes/bootstrap/
+tools/wkhtmltopdf/*
+
+# Macintosh OS
+
+.DS_Store
+
+# Eclipse IDe
+
+.buildpath
+.project
+.settings/
+
+# Other
+
+.phpintel/
+
+wikilleulyywbdd.sql
