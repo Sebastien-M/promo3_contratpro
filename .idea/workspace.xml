@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a032a5b8-3958-422a-b6ea-5eabebf05c78" name="Default" comment="" />
+    <list default="true" id="a032a5b8-3958-422a-b6ea-5eabebf05c78" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="wakka.config.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wakka.config.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wakka.config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+            <state relative-caret-position="570">
+              <caret line="38" column="2" lean-forward="true" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -31,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+            <state relative-caret-position="390">
+              <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -64,7 +67,7 @@
       <file leaf-file-name="class.yeswiki.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/class.yeswiki.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2265">
+            <state relative-caret-position="24480">
               <caret line="1672" column="37" lean-forward="false" selection-start-line="1672" selection-start-column="37" selection-end-line="1672" selection-end-column="37" />
               <folding>
                 <element signature="e#6#2122#0#PHP" expanded="true" />
@@ -125,8 +128,8 @@
         <option value="$PROJECT_DIR$/includes/init.yeswiki.php" />
         <option value="$PROJECT_DIR$/wikilleulyywbdd.sql" />
         <option value="$PROJECT_DIR$/includes/class.yeswiki.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/wakka.config.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -157,50 +160,18 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="wikilleurbanne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wikilleurbanne" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wikilleurbanne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wikilleurbanne" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="handlers" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wikilleurbanne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wikilleurbanne" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="handlers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="page" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wikilleurbanne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wikilleurbanne" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wikilleurbanne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wikilleurbanne" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="tools" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wikilleurbanne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wikilleurbanne" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="wikilleurbanne" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wikilleurbanne" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wikilleurbanne" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="wikilleurbanne" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name=".idea" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="promo3_contratpro" type="b2602c69:ProjectViewProjectNode" />
+              <item name="promo3_contratpro" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -236,28 +207,29 @@
       <updated>1515753240809</updated>
       <workItem from="1515753241888" duration="1479000" />
       <workItem from="1515762621005" duration="1116000" />
-      <workItem from="1517825182518" duration="3239000" />
+      <workItem from="1517825182518" duration="3368000" />
+      <workItem from="1517842312482" duration="526000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5834000" />
+    <option name="totallyTimeSpent" value="6489000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25679544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26037195" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -280,6 +252,97 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/wakka.config.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wakka.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/actions/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/init.yeswiki.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/class.yeswiki.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24480">
+          <caret line="1672" column="37" lean-forward="false" selection-start-line="1672" selection-start-column="37" selection-end-line="1672" selection-end-column="37" />
+          <folding>
+            <element signature="e#6#2122#0#PHP" expanded="true" />
+            <marker date="1511730203000" expanded="true" signature="8957:9091" ph="SELECT * FRO... ${$this-&gt;GetConfigValue('table_prefix')}" />
+            <marker date="1511730203000" expanded="true" signature="10969:11084" ph="SELECT * FRO... ${$this-&gt;GetConfigValue('table_prefix')}" />
+            <marker date="1511730203000" expanded="true" signature="13373:13620" ph="SELECT id FR... ${$this-&gt;GetConfigValue('table_prefix')}" />
+            <marker date="1511730203000" expanded="true" signature="14875:15085" ph="INSERT INTO ${$this-&gt;GetConfigValue('table_prefix')}triples... " />
+            <marker date="1511730203000" expanded="true" signature="17727:17907" ph="DELETE FROM ${$this-&gt;GetConfigValue('table_prefix')}triples... " />
+            <marker date="1511730203000" expanded="true" signature="21039:21283" ph="SELECT * FRO... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="23029:23160" ph="select * fro... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="23249:23394" ph="select * fro... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="23487:23642" ph="select from_... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="23800:23962" ph="select id, t... " />
+            <marker date="1511730203000" expanded="true" signature="24219:24365" ph="select id, t... " />
+            <marker date="1511730203000" expanded="true" signature="24624:24712" ph="select * fro... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="24795:25015" ph="SELECT time " />
+            <marker date="1511730203000" expanded="true" signature="25223:25388" ph="select * fro... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="25853:26080" ph="select disti... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="26169:26428" ph="select disti... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="26556:26715" ph="DELETE FROM $... " />
+            <marker date="1511730203000" expanded="true" signature="26741:26834" ph="DELETE FROM $... " />
+            <marker date="1511730203000" expanded="true" signature="26861:26953" ph="DELETE FROM $... " />
+            <marker date="1511730203000" expanded="true" signature="26980:27077" ph="DELETE FROM $... " />
+            <marker date="1511730203000" expanded="true" signature="29327:29834" ph="insert into ${$this-&gt;config['table_prefix']}pages... " />
+            <marker date="1511730203000" expanded="true" signature="33529:33799" ph="SELECT DISTI... ${$wnPages}" />
+            <marker date="1511730203000" expanded="true" signature="34025:34067" ph="DELETE FROM ${$wnPages}... " />
+            <marker date="1511730203000" expanded="true" signature="42487:42630" ph="delete from ${$this-&gt;config['table_prefix']}links... " />
+            <marker date="1511730203000" expanded="true" signature="42960:43119" ph="insert into ${$this-&gt;config['table_prefix']}links... " />
+            <marker date="1511730203000" expanded="true" signature="45948:46181" ph="insert into ${$this-&gt;config['table_prefix']}referrers... " />
+            <marker date="1511730203000" expanded="true" signature="46284:46522" ph="select refer... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="46671:46830" ph="delete from ${$this-&gt;config['table_prefix']}referrers... " />
+            <marker date="1511730203000" expanded="true" signature="48206:48212" ph="&quot;" />
+            <marker date="1511730203000" expanded="true" signature="48266:48272" ph="&quot;" />
+            <marker date="1511730203000" expanded="true" signature="49662:49668" ph="&quot;" />
+            <marker date="1511730203000" expanded="true" signature="49675:49681" ph="&quot;" />
+            <marker date="1511730203000" expanded="true" signature="54321:54568" ph="select * fro... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="54648:54718" ph="select * fro... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="56238:56433" ph="select * fro... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="57207:57338" ph="select * fro... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="57754:57875" ph="select min(i... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="58023:58118" ph="select * fro... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="65807:65931" ph="SELECT * FRO... ${$this-&gt;config['table_prefix']}" />
+            <marker date="1511730203000" expanded="true" signature="67010:67306" ph="insert into ${$this-&gt;config['table_prefix']}acls... " />
+            <marker date="1511730203000" expanded="true" signature="68226:68423" ph="DELETE FROM ${$this-&gt;config['table_prefix']}acls... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wakka.config.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
           <folding />
@@ -290,9 +353,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#1838#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -300,9 +360,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#1409#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -362,7 +419,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -388,9 +444,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="39" />
-          <folding>
-            <element signature="e#6#1409#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -458,7 +511,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -496,7 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
           <caret line="15375" column="35" lean-forward="true" selection-start-line="15375" selection-start-column="35" selection-end-line="15375" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -504,9 +555,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1488595805000" expanded="true" signature="1710:1749" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -514,9 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#1838#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -524,9 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#1409#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -535,7 +577,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -551,7 +592,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/class.yeswiki.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2265">
+        <state relative-caret-position="24480">
           <caret line="1672" column="37" lean-forward="false" selection-start-line="1672" selection-start-column="37" selection-end-line="1672" selection-end-column="37" />
           <folding>
             <element signature="e#6#2122#0#PHP" expanded="true" />
@@ -608,14 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wakka.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -626,8 +659,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wakka.config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        <state relative-caret-position="570">
+          <caret line="38" column="2" lean-forward="true" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
           <folding />
         </state>
       </provider>
