@@ -4,7 +4,6 @@
 info.php
 tools/hashcash/secret/wp-hashcash.key
 cache/*
-!themes/bootstrap/
 tools/wkhtmltopdf/*
 
 # Macintosh OS
