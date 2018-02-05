@@ -1,0 +1,124 @@
+<?php 
+if(count($fiches)>0) : ?>
+<link rel="stylesheet" href="tools/bazar/presentation/styles/liste_agenda.css">
+
+    <?php echo $info_res;?>
+    <?php echo $pager_links;?>
+	<div class="Bloc_Liste_Agenda">
+	<table>
+	<?php $max_col = 3; $max_lign = 1; $nb_col = 0; $nb_lign = 0; ?>
+		<?php $nb_fiche_affiche = 0; $nbmax_fiche_affiche = 3; ?>
+    <?php foreach($fiches as $fiche): ?> 
+	<?php 
+	$nb_fiche_affiche++;
+		if ($nb_fiche_affiche <= $nbmax_fiche_affiche) :
+		//Pour afficher proprement la date de l'evenement
+		$joursem = array("Dim.", "Lun.", "Mar.", "Mer.", "Jeu.", "Ven.", "Sam.");
+		$moisjour = array(1=>"Jan.", "Fév.", "Mars", "Avril", "Mai", "Juin", "Juil.", "Août", "Sept.", "Oct.", "Nov.", "Déc.");
+		list($annee, $mois, $jour) = explode('-', $fiche['bf_date_debut_evenement']);
+
+		$date_debut = $fiche['bf_date_debut_evenement'];
+
+		//On verifie si l'évenement à un horaire de début
+
+		$horaire = false;
+		if(strstr($date_debut, "T")) 
+		{
+			$horaire = true;
+			$horaire_h = substr($date_debut, 11, 2);
+			$horaire_min = substr($date_debut, 14, 2);
+		}
+
+		// calcul du timestamp de l'evenement
+		if ($horaire == true)
+			$timestamp = mktime ($horaire_h, $horaire_min, 0, $mois, $jour, $annee);
+		else
+			$timestamp = mktime (0, 0, 0, $mois, $jour, $annee);
+
+		//Si l'evenement est passé on ne l'affiche pas
+		$datePasse = false;
+		if ($timestamp > time())
+		{
+			$datePasse = true;
+		}
+	?>
+	<?php
+		if ($nb_col == 0)
+			echo '<tr>';
+			
+		echo '<td>'; 
+	?> 
+	
+	<h4>
+		<?php
+			echo '<a href="'.$GLOBALS['wiki']->href('', $fiche['id_fiche']).'">';
+			echo substr($fiche['bf_titre'], 0, 40);
+			echo '</a>';	
+		?>
+	</h4>
+	
+	<span class="bloc_date_event">
+	<?php
+		echo $joursem[date("w",$timestamp)];
+		echo '<span class="date_event">';
+		echo date("d", strtotime($fiche['bf_date_debut_evenement']));
+		echo '</span> ';
+		echo $moisjour[date("n",$timestamp)];
+		//*
+		
+		$isLocated = false;
+		
+		if ($fichelieu = baz_valeurs_fiche($fiche['listefiche6']))
+		{
+			$isLocated = true;
+			$lien_fiche = $fichelieu['id_fiche'];		
+			if (!empty($fichelieu["bf_sigle"] ))
+				$titre_fiche = $fichelieu["bf_sigle"];
+			else
+				$titre_fiche = substr($fichelieu['bf_titre'], 0, 50);
+		}
+		else
+		{
+			$isLocated = true;	
+			if ($fiche_createur = baz_valeurs_fiche($fiche['createur']))
+			{
+				$titre_fiche = substr($fiche_createur['bf_titre'], 0, 30);
+				$lien_fiche = $fiche['createur'];
+			}
+			else
+				$isLocated = false;
+		}
+	echo '</span>';
+	/*/
+		if ($isLocated)
+		{
+			//Affichage lieu		
+			echo '<br /><div class="lieu_event">';
+			echo '<a href="';
+			echo $GLOBALS['wiki']->href('',$lien_fiche);
+			echo '">';
+			echo $titre_fiche;
+			echo '</a>';
+			echo '</div>';
+		}
+		//*/
+	?>
+		
+	<?php	
+		echo '</td>';
+		
+		$nb_col++;
+		if ($nb_col >= $max_col)
+			$nb_col = 0;
+			
+		endif;
+	?>
+    <?php endforeach; ?>
+	</table>
+	</div>
+    <?php echo $pager_links;?>
+    <?php 
+endif;
+  ?>
+  
+  

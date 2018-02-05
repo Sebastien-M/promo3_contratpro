@@ -1,0 +1,37 @@
+<?php if( count($fiches)>0 ) : ?>
+<link rel="stylesheet" href="tools/bazar/presentation/styles/annuaire_associations.css">
+    <?php echo $info_res;?>
+    <?php echo $pager_links;?>
+
+<?php $cpt=0; $out = ''; ?>
+<div style="text-align: left;" id="lettres_init">
+<!-- Alphabet cliquable pour aller sur les ancres des différentes lettres -->
+<a href="#lettre_a"> a </a><a href="#lettre_b"> b </a><a href="#lettre_c"> c </a><a href="#lettre_d"> d </a><a href="#lettre_e"> e </a><a href="#lettre_f"> f </a><a href="#lettre_g"> g </a><a href="#lettre_h"> h </a><a href="#lettre_i"> i </a><a href="#lettre_j"> j </a><a href="#lettre_k"> k </a><a href="#lettre_l"> l </a><a href="#lettre_m"> m </a><a href="#lettre_n"> n </a><a href="#lettre_o"> o </a><a href="#lettre_p"> p </a><a href="#lettre_q"> q </a><a href="#lettre_r"> r </a><a href="#lettre_s"> s </a><a href="#lettre_t"> t </a><a href="#lettre_u"> u </a><a href="#lettre_v"> v </a><a href="#lettre_w"> w </a><a href="#lettre_x"> x </a><a href="#lettre_y"> y </a><a href="#lettre_z"> z </a>
+</div>
+<?php $firstChar = ''; $out = '';?>
+<?php foreach($fiches as $fiche): // lance la boucle ?>
+<?php
+$out = '';
+		$fiche['bf_titre'] = trim($fiche['bf_titre']);
+                // prend la première lettre de bf_titre et la met en majuscule strtoupper
+        $firstChar = strtoupper($fiche['bf_titre']{0});
+        if (empty($curChar) || $firstChar != $curChar) 
+		{
+			if (!empty($curChar))
+			$out .= "<br>\n" ;
+			$out .= '<div class="clearfix"></div>';
+			$out .=  "<b class='Initiale' id='lettre_" . strtolower($firstChar) . "'>$firstChar</b><br />\n" ;
+			$curChar = $firstChar; // on met dans une variable curChar le caractère en cours d'utilsation
+        }
+				$out .= '<div class="bazar-entry"'.$fiche['html_data'].'>';
+                
+?>
+        <?php $out .= '<a style="text-align: left;" href="'.$GLOBALS['wiki']->href('',$fiche['id_fiche']).'" class="nom">'.$fiche['bf_titre'].'</a></div>'; 
+    echo $out;    ?>
+<?php endforeach; ?>
+
+
+<?php endif; ?>
+
+<a href="#" title="Haut de page" class="scrollup">▲</a>
+

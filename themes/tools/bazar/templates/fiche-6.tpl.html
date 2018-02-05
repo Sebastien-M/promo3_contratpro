@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="tools/bazar/presentation/styles/fiches/lieu.css">
+
+<div class="BlocFiche">
+	<h1>
+		<?php echo '<a href="wakka.php?wiki='.$fiche['id_fiche'].'">'.$fiche['bf_titre'].'</a>'?>
+	</h1>
+	<h4>
+		<?php //echo $fiche['checkboxListeTypelieu']; ?>
+			<?php
+	
+		echo $fiche['bf_adresse1'].' ';
+		echo $fiche['bf_code_postal'];
+	
+	?>
+	</h4> 
+	<p>
+		<?php echo $fiche['bf_description']; ?>
+	</p>
+	
+
+
+	<?php //echo $GLOBALS['wiki']->Format('{{bazarcarto id="6" query="id_fiche='.$fichelieu['id_fiche'].'"  lat="45.7772" lon="4.8850" zoom="14"  provider="CartoDB" template="map.tpl.html" color="blue"}}'); ?>
+	
+
+	
+	
+	
+</div>

@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="tools/bazar/presentation/styles/fiches/association.css">
+
+<?php
+
+include_once('functions.php');
+
+if ($fiche['createur'] == 'VillE')
+{
+	echo $GLOBALS['wiki']->Format('{{grid}}{{col size="12"}}');
+	echo '<h1>'.$fiche['bf_titre'].'</h1>';
+		
+		$data_description = $fiche['bf_description'];
+		$data_complementaires = $fiche['bf_champs_complementaires'];
+
+	afficher_infos_description($data_description, $data_complementaires);
+
+	echo $GLOBALS['wiki']->Format('{{end elem="col"}}{{end elem="grid"}}');
+	afficher_bazarlistes($fiche);
+}
+else
+{
+	if (empty($fiche['bf_description']) AND empty($fiche['bf_champs_complementaires']))
+	{
+		$data_description = false;
+		$data_complementaires = false;
+		echo $GLOBALS['wiki']->Format('{{grid}}{{col size="12"}}');
+		echo '<h1>'.$fiche['bf_titre'].'</h1>';
+		afficher_bloc_info($fiche, get_data_asso($fiche['id_fiche']));
+		echo $GLOBALS['wiki']->Format('{{end elem="col"}}{{end elem="grid"}}');
+		afficher_bazarlistes($fiche);
+	}
+	else
+	{
+		$data_description = $fiche['bf_description'];
+		$data_complementaires = $fiche['bf_champs_complementaires'];
+		
+		echo $GLOBALS['wiki']->Format('{{grid}}{{col size="8"}}');
+		echo '<div class="fiche-asso"><h1>'.$fiche['bf_titre'].'</h1><div class="clearfix"></div>';
+		
+		afficher_infos_description($data_description, $data_complementaires);
+		
+		echo $GLOBALS['wiki']->Format('{{end elem="col"}}{{col size="4"}}');
+		
+		afficher_bloc_info($fiche, get_data_asso($fiche['id_fiche']));
+		
+		echo $GLOBALS['wiki']->Format('{{end elem="col"}}{{end elem="grid"}}');
+		
+		afficher_bazarlistes($fiche);
+	}
+}
+?>
+
+<h5><a href="wakka.php?wiki=AnnuAire">Retourner à l'annuaire</a></5>

@@ -4,8 +4,7 @@
 info.php
 tools/hashcash/secret/wp-hashcash.key
 cache/*
-files/*
-themes/*
+
 !themes/bootstrap/
 tools/wkhtmltopdf/*
 
