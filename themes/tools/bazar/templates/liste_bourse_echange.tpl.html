@@ -2,49 +2,38 @@
 if(count($fiches)>0) : ?>
 <link rel="stylesheet" href="tools/bazar/presentation/styles/liste_bourse_echange.css">
 <div id="BlocListeBourseEchange">
+
     <?php echo $info_res;?>
     <?php echo $pager_links;?>
     <?php 
     foreach($fiches as $fiche): ?>
-	<?php
-	/*
-	if ($fiche['checkboxListeTypecategorieechange'] == 'Mater')
-	{
-		$background_style = 'style="background-color: blue;"';
-	}
-	else if ($fiche['checkboxListeTypecategorieechange'] == 'Loca')
-	{
-		$background_style = 'style="background-color: red;"';
-	}
-	else if ($fiche['checkboxListeTypecategorieechange'] == 'Compe')
-	{
-		$background_style = 'style="background-color: yellow;"';
-	}
-	else
-	{
-		$background_style = 'style="background: -moz-linear-gradient(left, grey, grey 30%, white 30%, white);"';
-	}
-	//*/
-	?>
-	<?php			
+    <?php
+
+	 
+			
 	if ($fiche['listeListeTypeechange'] == 'Propos')
 	{
 		
-		$classe_couleur = " propose ";
-		$texte_type_echange = " propose ";
+		$background_style= 'style="border: 3px solid #ff6d66; margin-top: 20px; padding: 10px"';
+		$texte_type_echange = " offre";
+		$classe_couleur = " offre ";
+		$a_style = "#ff6d66";
+	
 	}
 	else
 	{
+		$background_style= 'style="border: 3px solid #03a099; margin-top: 20px; padding: 10px"';
 		$texte_type_echange = " recherche";
 		$classe_couleur = " demande ";
-	}
-	?>
-	
-	<script type="javascript">
-	</script>
-		
-        <div class="bazar-entry ItemBourseEchange <?php echo $classe_couleur; ?>" <?php echo $background_style; echo $fiche['html_data'];?>>
-			<?php
+		$a_style = "#03a099";
+
+        } ?>
+
+        <script type="javascript">
+        </script>
+
+        <div class="bazar-entry ItemBourseEchange <?php echo $classe_couleur; ?>" <?php echo $background_style; echo $fiche[ 'html_data'];?>>
+            <?php
 			
 			$nom_createur = $fiche['createur'];
 			if ($fiche['createur'] == 'VillE')
@@ -55,27 +44,27 @@ if(count($fiches)>0) : ?>
 					$nom_createur = $fiche_createur['LIBELLE_TIERS'];
 			}
 			
-			echo '<a href="';
+			echo '<a style="font-weight: bold; color:'.$a_style.'"; href="';
 			echo $GLOBALS['wiki']->href('', $fiche['createur']);
 			echo '">';
 			echo $nom_createur;
 			echo '</a>';
 			?>
-			
-			<?php echo $texte_type_echange; ?>
-			
-			<span class="TitreEchange">
+
+                <?php echo $texte_type_echange; ?>
+
+                <span class="TitreEchange">
 			<?php
-			echo '<a href="';
+			echo '<a style=color:'.$a_style.' href="';
 			echo $GLOBALS['wiki']->href('', $fiche['id_fiche']);
 			echo '">';
 			echo $fiche['bf_titre'];
 			echo '</a>';
 			?>
 			</span>
-			<hr style="margin: 5px !important;" />
-			
-			<span class="BlocDescriptionItemBourseEchange">
+                <hr style="margin: 5px !important;" />
+
+                <span class="BlocDescriptionItemBourseEchange">
 			<?php
 				$description = strip_tags($GLOBALS['wiki']->Format($fiche['bf_description']));
 				$description  = $fiche['bf_description'];
@@ -91,10 +80,9 @@ if(count($fiches)>0) : ?>
 					
 			?>
 			</span>
-			
-			<hr style="margin: 5px !important;" />
-			Contact :
-			<?php
+
+                <hr style="margin: 5px !important;" /> Contact :
+                <?php
 				if (!empty($fiche['bf_contact']))
 				{
 					echo $fiche['bf_contact'];
@@ -106,9 +94,9 @@ if(count($fiches)>0) : ?>
 				}
 				?>
         </div>
-    <?php 
+        <?php 
     endforeach; ?>
-	</div>
-    <?php echo $pager_links;?>
-    <?php 
+</div>
+<?php echo $pager_links;?>
+<?php 
 endif; ?>
