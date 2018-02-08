@@ -231,7 +231,7 @@ function baz_afficher_formulaire_import()
                 $ext = substr($filename, strrpos($filename, '.') + 1);
                 if ($ext == 'csv') {
                     $newname = BAZ_CHEMIN_UPLOAD.$filename;
-                    //verification de la presence de ce fichier, s'il existe deja , on le supprime
+                    //verification de la presence de ce fichier, s'il existe deja , on le supprime
                     move_uploaded_file(
                         $_FILES['fileimport']['tmp_name'],
                         $newname
@@ -661,7 +661,7 @@ function baz_afficher_formulaire_import()
                 $chemin_destination =
                 BAZ_CHEMIN_UPLOAD.'bazar-import-'.$id.'.csv';
 
-                //verification de la presence de ce fichier, s'il existe deja , on le supprime
+                //verification de la presence de ce fichier, s'il existe deja , on le supprime
                 if (file_exists($chemin_destination)) {
                     unlink($chemin_destination);
                 }
@@ -3748,11 +3748,13 @@ function displayResultList($tableau_fiches, $params, $info_nb = true, $formtab =
         // colonne des resultats
         $outputresult = '<div class="col-xs-'.$resultcolsize.' span'.$resultcolsize.'">'."\n".
             '<div class="results">'."\n".
-            '<div class="alert alert-info">'."\n".
-            _t('BAZ_IL_Y_A').
-            '<span class="nb-results">'.count($fiches['fiches']).'</span> '
-            ._t('BAZ_FICHES_CORRESPONDANTES_FILTRES')."\n".
-            '.</div>'."\n".
+            
+            //bandeau qui affiche le nombre de fiches trouvées
+            // '<div class="alert alert-info">'."\n".
+            // _t('BAZ_IL_Y_A').
+            // '<span class="nb-results">'.count($fiches['fiches']).'</span> '
+            // ._t('BAZ_FICHES_CORRESPONDANTES_FILTRES')."\n".
+            // '.</div>'."\n".
             $output."\n".
             '</div> <!-- /.results -->'."\n".
             '</div> <!-- /.col-xs-'.$resultcolsize.' -->';
