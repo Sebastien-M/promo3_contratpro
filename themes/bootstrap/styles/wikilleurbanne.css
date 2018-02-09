@@ -290,6 +290,7 @@ h2 {
 
 .label {
     margin-left: 5px;
+    background-color: #ffb400;
 }
 
 @media (max-width: 980px) {
