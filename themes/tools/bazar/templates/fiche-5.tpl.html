@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="tools/bazar/presentation/styles/fiches/echange.css">
+
+<?php
+$fiche_auteur = baz_valeurs_fiche($fiche['createur']);	
+if (empty($fiche_auteur['bf_titre']))
+	$fiche_auteur['bf_titre'] = $fiche['createur'];
+	
+$date_publication = date("d-m-Y", strtotime(substr($fiche['date_creation_fiche'], 0, 10)));
+
+if ($fiche['listeListeTypeechange'] == 'Propos')
+	$type_echange = "Proposition par";
+else
+	$type_echange = "Demandé par";
+
+$categorie_echange = '';
+if (preg_match('/Mater/', $fiche['checkboxListeTypecategorieechange']))
+	$categorie_echange .= 'Matériel ';
+if (preg_match('/Loca/', $fiche['checkboxListeTypecategorieechange']))
+	$categorie_echange .= 'Location ';
+if (preg_match('/Compe/', $fiche['checkboxListeTypecategorieechange']))
+	$categorie_echange .= 'Compétence ';
+if (preg_match('/Benev/', $fiche['checkboxListeTypecategorieechange']))
+	$categorie_echange .= 'Bénévole ';
+
+	$nom_createur = $fiche_auteur['bf_titre'];
+	if ($fiche['createur'] == 'VillE')
+		$nom_createur = 'Ville de Villeurbanne';
+?>
+<div class="FicheEchange">
+		<h1>
+			<?php echo $fiche['bf_titre']; ?>
+		</h1>
+		<h3>Type d'échange :
+			<?php echo $categorie_echange; ?>
+		</h3>
+		<h4><?php echo $type_echange; ?> 
+			<a href="<?php echo $GLOBALS['wiki']->href('', $fiche['createur']); ?>">
+				<?php echo $nom_createur;?>
+			</a> le
+			<?php echo $date_publication; ?>
+		</h4>
+		<p>
+			<?php echo $fiche['bf_description']; ?>
+		</p>
+</div>

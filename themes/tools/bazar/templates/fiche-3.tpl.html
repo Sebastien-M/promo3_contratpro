@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="tools/bazar/presentation/styles/fiches/actu.css">
+
+<?php
+$fiche_auteur = baz_valeurs_fiche($fiche['createur']);	
+if (empty($fiche_auteur['bf_titre']))
+	$fiche_auteur['bf_titre'] = $fiche['createur'];
+	
+$date_publication = date("d-m-Y", strtotime(substr($fiche['date_creation_fiche'], 0, 10)));
+?>
+<div class="FicheActu">
+		<h1>
+			<?php echo $fiche['bf_titre']; ?>
+		</h1>
+		<h4>Publié par 
+			<?php
+			$nom_createur = $fiche_auteur['bf_titre'];
+			if ($fiche['createur'] == 'VillE')
+				$nom_createur = 'Ville de Villeurbanne';
+			?>
+			<a href="<?php echo $GLOBALS['wiki']->href('', $fiche['createur']); ?>">
+				<?php echo $nom_createur;?>
+			</a> le
+			<?php echo $date_publication; ?>
+		</h4>
+		<p> 
+			<?php echo $fiche['bf_description']; ?>
+		</p>
+		<?php 
+			if (isset($fiche['imagebf_image']) && $fiche['imagebf_image']!='')
+			{
+				echo '<div style="width: 100%; margin: auto; margin-bottom: 1em; margin-top: 4px; text-align: center;">';
+				echo '<img style="max-width: 100%;" src="files/'.$fiche['imagebf_image'].'" />';
+				echo '</div>';
+			} 
+		?>
+</div>

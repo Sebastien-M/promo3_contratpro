@@ -1,0 +1,114 @@
+<?php 
+if(count($fiches)>0) : ?>
+<link rel="stylesheet" href="tools/bazar/presentation/styles/liste_bourse_echange.css">
+<div id="BlocListeBourseEchange">
+    <?php echo $info_res;?>
+    <?php echo $pager_links;?>
+    <?php 
+    foreach($fiches as $fiche): ?>
+	<?php
+	/*
+	if ($fiche['checkboxListeTypecategorieechange'] == 'Mater')
+	{
+		$background_style = 'style="background-color: blue;"';
+	}
+	else if ($fiche['checkboxListeTypecategorieechange'] == 'Loca')
+	{
+		$background_style = 'style="background-color: red;"';
+	}
+	else if ($fiche['checkboxListeTypecategorieechange'] == 'Compe')
+	{
+		$background_style = 'style="background-color: yellow;"';
+	}
+	else
+	{
+		$background_style = 'style="background: -moz-linear-gradient(left, grey, grey 30%, white 30%, white);"';
+	}
+	//*/
+	?>
+	<?php			
+	if ($fiche['listeListeTypeechange'] == 'Propos')
+	{
+		
+		$classe_couleur = " propose ";
+		$texte_type_echange = " propose ";
+	}
+	else
+	{
+		$texte_type_echange = " recherche";
+		$classe_couleur = " demande ";
+	}
+	?>
+	
+	<script type="javascript">
+	</script>
+		
+        <div class="bazar-entry ItemBourseEchange <?php echo $classe_couleur; ?>" <?php echo $background_style; echo $fiche['html_data'];?>>
+			<?php
+			
+			$nom_createur = $fiche['createur'];
+			if ($fiche['createur'] == 'VillE')
+				$nom_createur = 'Ville de Villeurbanne';
+			else
+			{
+				if ($fiche_createur = $GLOBALS['wiki']->LoadSingle("SELECT LIBELLE_TIERS FROM annuaire_assos WHERE tag = '".$fiche['createur']."';"))
+					$nom_createur = $fiche_createur['LIBELLE_TIERS'];
+			}
+			
+			echo '<a href="';
+			echo $GLOBALS['wiki']->href('', $fiche['createur']);
+			echo '">';
+			echo $nom_createur;
+			echo '</a>';
+			?>
+			
+			<?php echo $texte_type_echange; ?>
+			
+			<span class="TitreEchange">
+			<?php
+			echo '<a href="';
+			echo $GLOBALS['wiki']->href('', $fiche['id_fiche']);
+			echo '">';
+			echo $fiche['bf_titre'];
+			echo '</a>';
+			?>
+			</span>
+			<hr style="margin: 5px !important;" />
+			
+			<span class="BlocDescriptionItemBourseEchange">
+			<?php
+				$description = strip_tags($GLOBALS['wiki']->Format($fiche['bf_description']));
+				$description  = $fiche['bf_description'];
+				if (strlen($description) > 140)
+				{
+					echo substr($description, 0, 140);
+					echo '<a style="color: white;" href="wakka.php?wiki='.$fiche['id_fiche'].'">...</a>';
+				}
+				else
+				{
+					echo $description;
+				}
+					
+			?>
+			</span>
+			
+			<hr style="margin: 5px !important;" />
+			Contact :
+			<?php
+				if (!empty($fiche['bf_contact']))
+				{
+					echo $fiche['bf_contact'];
+				}
+				else
+				{
+					$fichelieu = $GLOBALS['wiki']->LoadSingle('SELECT email FROM '.$GLOBALS['wiki']->config['table_prefix'].'users WHERE name = "'.$fiche['createur'].'";');
+					echo $fichelieu['email'];
+				}
+				?>
+        </div>
+    <?php 
+    endforeach; ?>
+	</div>
+    <?php echo $pager_links;?>
+    <?php 
+endif; ?>
