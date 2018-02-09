@@ -9,6 +9,7 @@ if(count($fiches)>0) : ?>
     foreach($fiches as $fiche): ?>
     <?php
 
+
 	 
 			
 	if ($fiche['listeListeTypeechange'] == 'Propos')
@@ -18,6 +19,12 @@ if(count($fiches)>0) : ?>
 		$texte_type_echange = " offre";
 		$classe_couleur = " offre ";
 		$a_style = "#ff6d66";
+		$label = '';
+
+		if ($fiche['listeListeStatutechange'] == '1')
+		{	
+			$label = '<span class="label label-warning">Pourvu</span>';
+		}
 	
 	}
 	else
@@ -26,6 +33,12 @@ if(count($fiches)>0) : ?>
 		$texte_type_echange = " recherche";
 		$classe_couleur = " demande ";
 		$a_style = "#03a099";
+		$label = '';
+
+		if ($fiche['listeListeStatutechange'] == '1')
+		{	
+			$label = '<span class="label label-warning">Pourvu</span>';
+		}
 
         } ?>
 
@@ -60,6 +73,7 @@ if(count($fiches)>0) : ?>
 			echo '">';
 			echo $fiche['bf_titre'];
 			echo '</a>';
+			echo $label;
 			?>
 			</span>
                 <hr style="margin: 5px !important;" />
