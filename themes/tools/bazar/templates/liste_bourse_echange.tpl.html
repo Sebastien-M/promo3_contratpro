@@ -54,9 +54,9 @@ if(count($fiches)>0) : ?>
 			else
 			{
 				if ($fiche_createur = $GLOBALS['wiki']->LoadSingle("SELECT LIBELLE_TIERS FROM annuaire_assos WHERE tag = '".$fiche['createur']."';"))
-					$nom_createur = $fiche_createur['LIBELLE_TIERS'];
+					$fiche_auteur = baz_valeurs_fiche($fiche['createur']);	
+					$nom_createur = $fiche_auteur['bf_titre'];
 			}
-			
 			echo '<a style="font-weight: bold; color:'.$a_style.'"; href="';
 			echo $GLOBALS['wiki']->href('', $fiche['createur']);
 			echo '">';
