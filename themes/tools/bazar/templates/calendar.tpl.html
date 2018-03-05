@@ -1,3 +1,23 @@
+<aside>
+    <h4>Derniers événements ajoutés</h4>
+    <?php
+        $listEvents = ["", ""] ;
+        
+        foreach($listEvents as $event) {
+        ?>
+    <div class="event">
+        <div class="event-date">JEU. <span>15</span> JAN.</div>
+        <div class="event-infos">
+            <h5>titre</h5>
+            <p class="horaire">horaire</p>
+            <p class="localisation">localisation</p>
+        </div>
+    </div>
+        <?php
+        }
+        ?>
+    
+</aside>
 <?php
 
 if(count($fiches)>0) {
@@ -155,6 +175,14 @@ if(count($fiches)>0) {
     color:white;
 }
 
+#calendar1 {
+    width : 75% ;
+    min-width : 800px ;
+    display : inline-block ;
+    vertical-align : top ;
+}
+
+
 #calendar1 h2 {
     color: #ff6d66 ;
 }
@@ -208,4 +236,65 @@ if(count($fiches)>0) {
     font-size : 1.5rem !important;
     border : none ;
 }
+
+aside {
+    display : inline-block ;
+    vertical-align : top ;
+    width : calc(25% - 15px) ;
+    margin-right : 10px ;
+    margin-bottom : 20px ;
+}
+
+.clearer {
+    display : block ;
+    clear : both ;
+    background : none ;
+    color : transparent ;
+    border : none ;
+}
+
+/*Liste des derniers événements ajoutés*/
+h5 {
+    color : #ff6d66 ;
+    font-weight : bold ;
+}
+
+.horaire::before {
+    content : "⌚" ;
+}
+
+.localisation::before {
+    content : "➳" ;
+    
+}
+
+h5, .localisation, .horaire {
+    margin : 0 ;
+}
+
+.event {
+    border-bottom : 2px solid #03a099 ;
+}
+
+.event-date, .event-infos {
+    display : inline-block ;
+    vertical-align : top ;
+    font-weight : bold ;
+}
+
+.event-date {
+    width : 3rem ;
+    text-align : center ;
+    color : #03a099 ;
+}
+
+.event-date > span {
+    color : orange ;
+}
+
+.event-infos {
+    text-align : right ;
+    width : calc(100% - 4rem) ;
+}
 </style>
+<hr class="clearer" />
