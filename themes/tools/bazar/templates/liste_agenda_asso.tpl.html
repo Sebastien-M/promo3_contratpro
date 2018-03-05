@@ -11,12 +11,12 @@ if(count($fiches)>0) : ?>
 	<?php 
 		//Pour afficher proprement la date de l'evenement
 		$joursem = array("Dim.", "Lun.", "Mar.", "Mer.", "Jeu.", "Ven.", "Sam.");
-		$moisjour = array(1=>"Jan.", "Fév.", "Mars", "Avril", "Mai", "Juin", "Juil.", "Août", "Sept.", "Oct.", "Nov.", "Déc.");
+		$moisjour = array(1=>"Jan.", "Fï¿½v.", "Mars", "Avril", "Mai", "Juin", "Juil.", "Aoï¿½t", "Sept.", "Oct.", "Nov.", "Dï¿½c.");
 		list($annee, $mois, $jour) = explode('-', $fiche['bf_date_debut_evenement']);
 
 		$date_debut = $fiche['bf_date_debut_evenement'];
 
-		//On verifie si l'évenement à un horaire de début
+		//On verifie si l'ï¿½venement ï¿½ un horaire de dï¿½but
 		
 		
 		$horaire = false;
@@ -29,7 +29,7 @@ if(count($fiches)>0) : ?>
 		
 				$isLocated = false;
 		
-		//On regarde le lieu de l'événement
+		//On regarde le lieu de l'ï¿½vï¿½nement
 		if ($fichelieu = baz_valeurs_fiche($fiche['listefiche6']))
 		{
 			$isLocated = true;
@@ -117,7 +117,7 @@ if(count($fiches)>0) : ?>
 												echo $horaire_min;
 										}   
 										else
-											echo 'Journée';  
+											echo 'JournÃ©e';  
 										echo '<br /><i class="glyphicon glyphicon-map-marker map-marker"></i> ';
 										$fichelieu = baz_valeurs_fiche($fiche['listefiche1']);
 										echo '<a class="LieuAgenda" style="color: #555;" href="';

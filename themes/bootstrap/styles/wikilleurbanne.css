@@ -313,6 +313,7 @@ h2
 
 .fc-day-grid-event {
     background : #ff6d66 !important ;
+    border-color : #ff6d66 !important ;
+    font-size : 1.5rem !important;
     border : none ;
-    line-height : 20px ;
 }
