@@ -262,58 +262,6 @@ h2
 
 @media (min-width: 980px) { .test_hide_menu {display: none;} .test_show_menu {display: block;} }
 
-
-/* Page Calendrier/agenda */
-#calendar1 h2 {
-    color: #ff6d66 ;
-}
-
-#calendar1 thead.fc-head  {
-    background : #03a099 ;
-}
-
-.fc-today-button {
-    color : #ff6d66 ;
-    border-color : #ff6d66 ;
+.footer, .text-footer {
     font-weight : bold ;
-}
-
-.btn-group .btn-default {
-    color: #03a099 ;
-    border-color : #03a099 ;
-    font-weight : bold ;
-}
-
-.btn-group .active {
-    background : #ff6d66 ;
-    color:  white ;
-    border-color : #ff6d66 ;
-    box-shadow : none ;
-    font-weight : bold ;
-}
-
-.ajoutdate a {
-    color : #ff6d66 ;
-    border : 2px solid #03a099 ;
-    padding : 10px ;
-    font-weight : bold ;
-}
-
-.navbar .brand {
-    font-weight : bold ;
-}
-
-.alert-info {
-    background : hsl(3, 100%, 91%) ;
-}
-
-.fc-day-number {
-    font-weight : bold ;
-}
-
-.fc-day-grid-event {
-    background : #ff6d66 !important ;
-    border-color : #ff6d66 !important ;
-    font-size : 1.5rem !important;
-    border : none ;
 }
