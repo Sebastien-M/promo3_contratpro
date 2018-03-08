@@ -8,7 +8,7 @@ if ($fiche['createur'] == 'VillE')
 {
 	echo $GLOBALS['wiki']->Format('{{grid}}{{col size="12"}}');
 	echo '<h1>'.$fiche['bf_titre'].'</h1>';
-		
+
 		$data_description = $fiche['bf_description'];
 		$data_complementaires = $fiche['bf_champs_complementaires'];
 
@@ -47,7 +47,8 @@ else
 		
 		afficher_bazarlistes($fiche);
 	}
+    var_dump($fiche);
 }
 ?>
 
-<h5><a href="wakka.php?wiki=AnnuAire">Retourner à l'annuaire</a></5>
+<h5><a href="wakka.php?wiki=AnnuAire">Retourner à l'annuaire</a></h5>
