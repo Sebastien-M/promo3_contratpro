@@ -24,8 +24,8 @@ class Asso
     private $PUBLIC_VISE;
 
 
-    public function assAsso(){
-
+    public function getTAG($libelle_tiers){
+        return str_replace(' ', '', $libelle_tiers);
     }
 
     public function getCODETIERS()

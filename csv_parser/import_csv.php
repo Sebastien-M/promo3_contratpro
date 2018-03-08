@@ -15,7 +15,6 @@ $data_getter = new GetData('../assocs.csv');
 $em = Database::instance();
 $assos = $data_getter->get_assos();
 foreach ($assos as $asso) {
-    echo utf8_encode($asso->getLIBELLETIERS());
     $query = $em->prepare("INSERT INTO `annuaire_assos`(CODE_TIERS,
                                                               LIBELLE_TIERS,
                                                               SIGLE,
@@ -35,7 +34,8 @@ foreach ($assos as $asso) {
                                                               ADRESSE_SITE,
                                                               OUVERTURE,
                                                               PERMANENCE,
-                                                              PUBLIC_VISE) 
+                                                              PUBLIC_VISE,
+                                                              tag) 
                                                               VALUES (:CODE_TIERS,
                                                                   :LIBELLE_TIERS,
                                                                   :SIGLE,
@@ -55,7 +55,8 @@ foreach ($assos as $asso) {
                                                                   :ADRESSE_SITE,
                                                                   :OUVERTURE,
                                                                   :PERMANENCE,
-                                                                  :PUBLIC_VISE)");
+                                                                  :PUBLIC_VISE,
+                                                                  :tag)");
     $query->bindValue(':CODE_TIERS', $asso->getCODETIERS());
     $query->bindValue(':LIBELLE_TIERS', $asso->getLIBELLETIERS());
     $query->bindValue(':SIGLE', $asso->getSIGLE());
@@ -76,5 +77,12 @@ foreach ($assos as $asso) {
     $query->bindValue(':OUVERTURE', $asso->getOUVERTURE());
     $query->bindValue(':PERMANENCE', $asso->getPERMANENCE());
     $query->bindValue(':PUBLIC_VISE', $asso->getPUBLICVISE());
-    $query->execute();
+    $query->bindValue(':tag', $asso->getTAG($asso->getLIBELLETIERS()));
+    try{
+        $query->execute();
+    }
+    catch (\Exception $e){
+        echo $e;
+    }
+//    $query->execute();
 }
