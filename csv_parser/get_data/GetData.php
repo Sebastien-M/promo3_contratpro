@@ -51,6 +51,7 @@ class GetData
                 $asso->setOUVERTURE(utf8_encode($desc_asso[ASSO_INDEX['OUVERTURE_CODE']]));
                 $asso->setPERMANENCE(utf8_encode($desc_asso[ASSO_INDEX['PERMANENCE_CODE']]));
                 $asso->setPUBLICVISE(utf8_encode($desc_asso[ASSO_INDEX['PUBLIC_VISE_CODE']]));
+                $asso->setTAG(utf8_encode($desc_asso[ASSO_INDEX['LIBELLE_TIERS_CODE']]));
                 $this->asso_array[] = $asso;
             }
             $i += 1;

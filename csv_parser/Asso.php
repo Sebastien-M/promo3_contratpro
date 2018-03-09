@@ -22,10 +22,15 @@ class Asso
     private $OUVERTURE;
     private $PERMANENCE;
     private $PUBLIC_VISE;
+    private $tag;
 
 
-    public function getTAG($libelle_tiers){
-        return str_replace(' ', '', $libelle_tiers);
+    public function setTAG($libelle_tiers){
+        $this->tag = str_replace(' ', '', $libelle_tiers);
+    }
+
+    public function getTAG(){
+        return $this->tag;
     }
 
     public function getCODETIERS()

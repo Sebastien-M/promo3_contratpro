@@ -33,27 +33,37 @@ class Database
         return self::$instance->em;
     }
 
+    public static function is_asso_in_db($code_tiers)
+    {
+        $em = self::instance();
+        $query = $em->prepare('SELECT * FROM `annuaire_assos` WHERE CODE_TIERS = ?');
+        $query->execute(array($code_tiers));
+
+        return $query->fetch() != boolval(false);
+    }
+
     public static function add_asso(\Asso $asso,
-                             $code_tiers,
-                             $libelle_tiers,
-                             $sigle,
-                             $descriptif,
-                             $rue1,
-                             $rue2,
-                             $cp,
-                             $ville,
-                             $telephone,
-                             $mail,
-                             $site_internet,
-                             $code_categorie,
-                             $libelle_categorie,
-                             $code_sous_categorie,
-                             $libelle_sous_categorie,
-                             $site,
-                             $adresse_site,
-                             $ouverture,
-                             $permanence,
-                             $public_vise)
+                                    $code_tiers,
+                                    $libelle_tiers,
+                                    $sigle,
+                                    $descriptif,
+                                    $rue1,
+                                    $rue2,
+                                    $cp,
+                                    $ville,
+                                    $telephone,
+                                    $mail,
+                                    $site_internet,
+                                    $code_categorie,
+                                    $libelle_categorie,
+                                    $code_sous_categorie,
+                                    $libelle_sous_categorie,
+                                    $site,
+                                    $adresse_site,
+                                    $ouverture,
+                                    $permanence,
+                                    $public_vise,
+                                    $tag)
     {
         $em = self::instance();
         $query = $em->prepare("INSERT INTO `annuaire_assos`(CODE_TIERS,
@@ -98,34 +108,34 @@ class Database
                                                                   :PERMANENCE,
                                                                   :PUBLIC_VISE,
                                                                   :tag)");
-        $query->bindValue(':CODE_TIERS',$code_tiers);
-        $query->bindValue(':LIBELLE_TIERS',$libelle_tiers);
-        $query->bindValue(':SIGLE',$sigle);
-        $query->bindValue(':DESCRIPTIF',$descriptif);
-        $query->bindValue(':RUE1',$rue1);
-        $query->bindValue(':RUE2',$rue2);
-        $query->bindValue(':CP',$cp);
-        $query->bindValue(':VILLE',$ville);
-        $query->bindValue(':TELEPHONE',$telephone);
-        $query->bindValue(':MAIL',$mail);
-        $query->bindValue(':SITE_INTERNET',$site_internet);
-        $query->bindValue(':CODE_CATEGORIE',$code_categorie);
-        $query->bindValue(':LIBELLE_CATEGORIE',$libelle_categorie);
-        $query->bindValue(':CODE_SOUS_CATEGORIE',$code_sous_categorie);
-        $query->bindValue(':LIBELLE_SOUS_CATEGORIE',$libelle_sous_categorie);
-        $query->bindValue(':SITE',$site);
-        $query->bindValue(':ADRESSE_SITE',$adresse_site);
-        $query->bindValue(':OUVERTURE',$ouverture);
-        $query->bindValue(':PERMANENCE',$permanence);
-        $query->bindValue(':PUBLIC_VISE',$public_vise);
-        $query->bindValue(':tag',$asso->getLIBELLETIERS());
-        try{
-            $query->execute();
+        $query->bindValue(':CODE_TIERS', $code_tiers);
+        $query->bindValue(':LIBELLE_TIERS', $libelle_tiers);
+        $query->bindValue(':SIGLE', $sigle);
+        $query->bindValue(':DESCRIPTIF', $descriptif);
+        $query->bindValue(':RUE1', $rue1);
+        $query->bindValue(':RUE2', $rue2);
+        $query->bindValue(':CP', $cp);
+        $query->bindValue(':VILLE', $ville);
+        $query->bindValue(':TELEPHONE', $telephone);
+        $query->bindValue(':MAIL', $mail);
+        $query->bindValue(':SITE_INTERNET', $site_internet);
+        $query->bindValue(':CODE_CATEGORIE', $code_categorie);
+        $query->bindValue(':LIBELLE_CATEGORIE', $libelle_categorie);
+        $query->bindValue(':CODE_SOUS_CATEGORIE', $code_sous_categorie);
+        $query->bindValue(':LIBELLE_SOUS_CATEGORIE', $libelle_sous_categorie);
+        $query->bindValue(':SITE', $site);
+        $query->bindValue(':ADRESSE_SITE', $adresse_site);
+        $query->bindValue(':OUVERTURE', $ouverture);
+        $query->bindValue(':PERMANENCE', $permanence);
+        $query->bindValue(':PUBLIC_VISE', $public_vise);
+        $query->bindValue(':tag', $tag);
+        if (!self::is_asso_in_db($asso->getCODETIERS()))
+            try {
+                $query->execute();
+                return true;
+            } catch (\Exception $e) {
+                return false;
+            }
             return true;
-        }
-        catch (\Exception $e){
-//            echo $e;
-            return false;
-        }
     }
 }
